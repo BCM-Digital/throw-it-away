@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"  # Make sure this line is present
+      - "3001:3001"  # Port for BrowserSync's UI
+    volumes:
+      - .:/usr/src/app
+    command: npm start

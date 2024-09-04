@@ -1,0 +1,13 @@
+{
+    "name": "calming-interactive-component",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "lite-server --config bs-config.js"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "lite-server": "^2.6.1"
+    }
+  }
