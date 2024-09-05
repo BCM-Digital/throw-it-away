@@ -1,20 +1,20 @@
 # Use Node.js official image from Docker Hub
 FROM node:18-alpine
 
-# Create and set the working directory inside the container
+# Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy the local files to the container
+# Copy package.json and package-lock.json to install dependencies
 COPY package*.json ./
 
-# Install necessary dependencies
+# Install dependencies
 RUN npm install
 
-# Copy all the project files
+# Copy the rest of the project files
 COPY . .
 
-# Expose the development server on port 8080
-EXPOSE 8080
+# Expose the port
+EXPOSE 3000
 
-# Run the local development server
+# Start the Express.js server
 CMD ["npm", "start"]

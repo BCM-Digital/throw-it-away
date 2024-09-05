@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #b0c4de;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Initial setup for problem output */
+#problem-output {
+    font-size: 24px;
+    opacity: 1;
+    visibility: hidden;
+}
+
+/* Animation for shrinking and fading */
+@keyframes shrinkFade {
+    0% {
+        font-size: 24px;
+        opacity: 1;
+    }
+    100% {
+        font-size: 0;
+        opacity: 0;
+    }
+}
+
+/* Apply the animation */
+.shrinking {
+    animation: shrinkFade 5s forwards;
+    visibility: visible;
+}
