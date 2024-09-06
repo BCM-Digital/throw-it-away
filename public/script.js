@@ -7,18 +7,20 @@ throwAwayBtn.addEventListener('click', () => {
 
     if (userText === '') return;  // Do nothing if the input is empty
 
-    // Set the text content and make the problem output visible
+    // Set the text content and make it visible at the center
     problemOutput.textContent = userText;
-    problemOutput.style.visibility = 'visible';
+    problemOutput.style.visibility = 'visible';  // Ensure visibility
 
     // Hide the input and button while the animation is running
     userInput.style.visibility = 'hidden';
     throwAwayBtn.style.visibility = 'hidden';
 
-    // Trigger the shrinking and fading animation
-    problemOutput.classList.add('shrinking');
+    // Add the shrinking class after 1.5 seconds of being visible
+    setTimeout(() => {
+        problemOutput.classList.add('shrinking');
+    }, 1500);  // 1.5-second delay before shrinking begins
 
-    // Reset after 5 seconds (once animation is done)
+    // Reset after the animation ends (explosion included)
     setTimeout(() => {
         problemOutput.textContent = '';  // Clear the text
         problemOutput.classList.remove('shrinking');  // Remove the shrinking class
@@ -30,5 +32,5 @@ throwAwayBtn.addEventListener('click', () => {
 
         // Clear the input field for the next interaction
         userInput.value = '';
-    }, 5000);  // Match the duration of the CSS animation
+    }, 6000);  // Match the duration of the entire animation (5s + 1s explosion)
 });
